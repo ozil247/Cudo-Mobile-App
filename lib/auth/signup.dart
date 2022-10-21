@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unnecessary_import, unused_import, non_constant_identifier_names, avoid_unnecessary_containers, deprecated_member_use, unnecessary_new, unnecessary_this
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -172,20 +172,29 @@ class _SignupState extends State<Signup> {
             height: 50,
           ),
           SizedBox(
-            width: 350,
-            height: 50,
-            child: Container(
-              child: RaisedButton(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(10)),
-                  color: AppColors.yellowColor,
-                  child: BigText(
+                width: 350,
+                height: 50,
+                child: Container(
+                  // ignore: sort_child_properties_last
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // Navigator.of(context).push(
+                      //     MaterialPageRoute(builder: (context) => Dashboard()));
+                    },
+                    // ignore: sort_child_properties_last
+                    child: BigText(
+                      text: "Sign Up",
                       color: AppColors.blueColor,
-                      text: 'Sign Up',
-                      fontWeight: FontWeight.bold),
-                  onPressed: (() {})),
-            ),
-          ),
+                      fontWeight: FontWeight.normal,
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: AppColors.yellowColor,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(10.0)),
+                    ),
+                  ),
+                ),
+              ),
           Row(
             children: [
               SizedBox(

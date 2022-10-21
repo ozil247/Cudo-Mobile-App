@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, duplicate_ignore
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/small_text.dart';
 import 'package:flutter_application_1/widget/static/colors.dart';

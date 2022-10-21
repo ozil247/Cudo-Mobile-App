@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, prefer_const_constructors_in_immutables, prefer_const_constructors, sized_box_for_whitespace, duplicate_ignore
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/auth/signup.dart';
@@ -44,27 +44,37 @@ class _OnboardingState extends State<Onboarding> {
             child: SizedBox(
               width: 350,
               height: 50,
-              child: RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                color: AppColors.yellowColor,
-                child: BigText(
-                    color: AppColors.blueColor,
-                    text: "Log In",
-                    size: 15,
-                    fontWeight: FontWeight.bold),
+              // ignore: sort_child_properties_last
+              child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
+                      //please change Dashboard to Register
                       builder: (context) => Login(),
                     ),
                   );
                 },
+                // ignore: sort_child_properties_last
+                child: BigText(
+                  text: "Login",
+                  fontWeight: FontWeight.bold,
+                  size: 14,
+                  color: AppColors.blueColor,
+                ),
+
+                style: ElevatedButton.styleFrom(
+                  primary:
+                      AppColors.yellowColor, //change background color of button
+                  // onPrimary: Colors.yellow, //change text color of button
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
               ),
             ),
           ),
+          // ignore: prefer_const_constructors
           SizedBox(
             height: 20,
           ),
@@ -73,24 +83,32 @@ class _OnboardingState extends State<Onboarding> {
             child: SizedBox(
               width: 350,
               height: 50,
-              child: RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                color: Colors.white,
-                child: BigText(
-                    color: AppColors.blueColor,
-                    text: "Sign Up",
-                    size: 15,
-                    fontWeight: FontWeight.bold),
+              // ignore: sort_child_properties_last
+              child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
+                      //please change Dashboard to Register
                       builder: (context) => Signup(),
                     ),
                   );
                 },
+                // ignore: sort_child_properties_last
+                child: BigText(
+                  text: "Sign Up",
+                  fontWeight: FontWeight.bold,
+                  size: 14,
+                  color: AppColors.blueColor,
+                ),
+
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white, //change background color of button
+                  // onPrimary: Colors.yellow, //change text color of button
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
               ),
             ),
           ),

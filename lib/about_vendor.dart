@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, duplicate_ignore, avoid_unnecessary_containers, deprecated_member_use, unnecessary_new
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widget/big_text.dart';
 import 'package:flutter_application_1/widget/static/colors.dart';
@@ -96,28 +98,30 @@ class _AboutVendorState extends State<AboutVendor> {
             SizedBox(
               height: 70,
             ),
-
-            SizedBox(
-              width: 350,
-              height: 50,
-              child: Container(
-                child: RaisedButton(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(8.0)),
-                  color: Color(0xff1A214F),
-                  onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => AboutVendor()));
-                  },
-                  child: BigText(
-                    size: 16,
-                    text: "Book Now",
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+SizedBox(
+                width: 350,
+                height: 50,
+                child: Container(
+                  // ignore: sort_child_properties_last
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => AboutVendor()));
+                    },
+                    // ignore: sort_child_properties_last
+                    child: BigText(
+                      text: "Book Now",
+                      color: Colors.white,
+                      fontWeight: FontWeight.normal,
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xff1A214F),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(10.0)),
+                    ),
                   ),
                 ),
               ),
-            ),
           ],
         ),
       )),

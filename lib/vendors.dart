@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, prefer_const_constructors, avoid_unnecessary_containers, deprecated_member_use, unnecessary_new
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/booking.dart';
 import 'package:flutter_application_1/dashboard.dart';
@@ -97,24 +99,27 @@ class _VendorState extends State<Vendor> {
                       ),
                     ),
                     SizedBox(
-                      width: 180,
-                      height: 40,
+                      width: 350,
+                      height: 50,
                       child: Container(
-                        margin: EdgeInsets.only(top: 10),
-                        child: RaisedButton(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(10.0)),
-                          color: Color(0xff1A214F),
+                        // ignore: sort_child_properties_last
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Booking()));
+                          },
+                          // ignore: sort_child_properties_last
                           child: SmallText(
                             text: "Request A Quote",
                             color: Color(0xffFF9E00),
                             size: 14,
                             fontWeight: FontWeight.bold,
                           ),
-                          onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => Booking()));
-                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Color(0xff1A214F),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(10.0)),
+                          ),
                         ),
                       ),
                     ),
@@ -192,24 +197,27 @@ class _VendorState extends State<Vendor> {
                       ),
                     ),
                     SizedBox(
-                      width: 180,
-                      height: 40,
+                      width: 350,
+                      height: 50,
                       child: Container(
-                        margin: EdgeInsets.only(top: 10),
-                        child: RaisedButton(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(10.0)),
-                          color: Color(0xff1A214F),
+                        // ignore: sort_child_properties_last
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Booking()));
+                          },
+                          // ignore: sort_child_properties_last
                           child: SmallText(
                             text: "Request A Quote",
                             color: Color(0xffFF9E00),
                             size: 14,
                             fontWeight: FontWeight.bold,
                           ),
-                          onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => Booking()));
-                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Color(0xff1A214F),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(10.0)),
+                          ),
                         ),
                       ),
                     ),

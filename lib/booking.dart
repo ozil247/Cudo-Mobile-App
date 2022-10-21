@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import, avoid_unnecessary_containers, deprecated_member_use, unnecessary_new
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/about_vendor.dart';
@@ -88,18 +88,22 @@ class _BookingState extends State<Booking> {
                   width: 350,
                   height: 50,
                   child: Container(
-                    child: RaisedButton(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(10.0)),
-                      color: AppColors.blueColor,
+                    // ignore: sort_child_properties_last
+                    child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => AboutVendor()));
                       },
+                      // ignore: sort_child_properties_last
                       child: BigText(
                         text: "Submit",
                         color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.normal,
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: AppColors.blueColor,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(10.0)),
                       ),
                     ),
                   ),

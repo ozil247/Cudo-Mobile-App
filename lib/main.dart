@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import, duplicate_ignore
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/auth/login.dart';

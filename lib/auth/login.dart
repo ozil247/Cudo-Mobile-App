@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use, avoid_unnecessary_containers, prefer_const_constructors, sized_box_for_whitespace
+// ignore_for_file: deprecated_member_use, avoid_unnecessary_containers, prefer_const_constructors, sized_box_for_whitespace, unnecessary_new, unused_import, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/auth/signup.dart';
@@ -101,19 +101,23 @@ class _LoginState extends State<Login> {
                 width: 350,
                 height: 50,
                 child: Container(
-                  child: RaisedButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(10.0)),
-                    color: AppColors.yellowColor,
+                  // ignore: sort_child_properties_last
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => Dashboard()));
+                    },
+                    // ignore: sort_child_properties_last
                     child: BigText(
                       text: "Login",
                       color: AppColors.blueColor,
                       fontWeight: FontWeight.normal,
                     ),
-                    onPressed: () {
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => Dashboard()));
-                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: AppColors.yellowColor,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(10.0)),
+                    ),
                   ),
                 ),
               ),
