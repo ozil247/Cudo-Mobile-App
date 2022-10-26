@@ -22,7 +22,7 @@ class _OnboardingState extends State<Onboarding> {
           child: Column(
         children: [
           SizedBox(
-            height: 250,
+            height: 100,
           ),
           Center(child: Image(image: AssetImage('assets/onb.png'))),
           SizedBox(
@@ -68,7 +68,7 @@ class _OnboardingState extends State<Onboarding> {
                       AppColors.yellowColor, //change background color of button
                   // onPrimary: Colors.yellow, //change text color of button
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(10),
                   ),
                 ),
               ),
@@ -76,7 +76,7 @@ class _OnboardingState extends State<Onboarding> {
           ),
           // ignore: prefer_const_constructors
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           Container(
             margin: EdgeInsets.only(top: 20, left: 10, right: 20),
@@ -106,11 +106,15 @@ class _OnboardingState extends State<Onboarding> {
                   primary: Colors.white, //change background color of button
                   // onPrimary: Colors.yellow, //change text color of button
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(10),
+                    side: BorderSide(color: AppColors.yellowColor),
                   ),
                 ),
               ),
             ),
+          ),
+          SizedBox(
+            height: 20,
           ),
         ],
       )),
