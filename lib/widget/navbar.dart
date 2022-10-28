@@ -1,10 +1,11 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/about_us.dart';
 import 'package:flutter_application_1/auth/login.dart';
 import 'package:flutter_application_1/blog.dart';
 import 'package:flutter_application_1/contact_us.dart';
+import 'package:flutter_application_1/widget/static/colors.dart';
 
 class Navbar extends StatelessWidget {
   const Navbar({super.key});

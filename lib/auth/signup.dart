@@ -162,10 +162,6 @@ class _SignupState extends State<Signup> {
                 height: 10,
               ),
               buildCheckbox(),
-              // SmallText(
-              //     text:
-              //         'I agree with your Privacy Policy and Terms and Condictions',
-              //     fontWeight: FontWeight.bold)
             ],
           )),
           SizedBox(
@@ -205,7 +201,7 @@ class _SignupState extends State<Signup> {
                 child: SizedBox(
                   child: SmallText(
                       text: 'Already have an account?',
-                      size: 11,
+                      size: 16,
                       color: AppColors.blueColor,
                       fontWeight: FontWeight.bold),
                 ),
@@ -219,7 +215,7 @@ class _SignupState extends State<Signup> {
                   child: SmallText(
                       color: AppColors.blueColor,
                       text: 'Login',
-                      size: 11,
+                      size: 16,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -256,7 +252,7 @@ class _SignupState extends State<Signup> {
         ),
       );
 
-  DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
+   DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
       value: item,
       child: Text(
         item,

@@ -2,8 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/auth/login.dart';
+import 'package:flutter_application_1/auth/reset_password.dart';
 import 'package:flutter_application_1/dashboard.dart';
 import 'package:flutter_application_1/home.dart';
+import 'package:flutter_application_1/select_state.dart';
 import 'package:flutter_application_1/splash_screen.dart';
 import 'package:flutter_application_1/plumbers.dart';
 
@@ -43,12 +45,12 @@ class MyApp extends StatelessWidget {
           ),
         ),
         inputDecorationTheme: InputDecorationTheme(
-          fillColor: Color.fromARGB(255, 243, 240, 240),
+          fillColor: Colors.white,
           filled: true,
           border: InputBorder.none,
         ),
       ),
-      home: Splash(),
+      home: Dashboard(),
     );
   }
 }

@@ -18,12 +18,16 @@ class _VendorState extends State<Vendor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const BackButton(
+          color: Color(0xffFF9E00),
+        ),
         backgroundColor: AppColors.blueColor,
         title: const Text(
-          'Vendors',
+          'VENDORS',
           style: TextStyle(color: Color(0xffFF9E00)),
         ),
         elevation: 0,
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
@@ -98,9 +102,10 @@ class _VendorState extends State<Vendor> {
                         ],
                       ),
                     ),
+                    SizedBox(height: 10,),
                     SizedBox(
-                      width: 350,
-                      height: 50,
+                      width: 170,
+                      height: 40,
                       child: Container(
                         // ignore: sort_child_properties_last
                         child: ElevatedButton(
@@ -118,7 +123,7 @@ class _VendorState extends State<Vendor> {
                           style: ElevatedButton.styleFrom(
                             primary: Color(0xff1A214F),
                             shape: RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(10.0)),
+                                borderRadius: new BorderRadius.circular(15.0)),
                           ),
                         ),
                       ),
@@ -166,7 +171,7 @@ class _VendorState extends State<Vendor> {
                               // ignore: prefer_const_literals_to_create_immutables
                               children: [
                                 Text(
-                                  'Ace John',
+                                  'Miracle Adah',
                                   style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
@@ -196,9 +201,10 @@ class _VendorState extends State<Vendor> {
                         ],
                       ),
                     ),
+                    SizedBox(height: 10,),
                     SizedBox(
-                      width: 350,
-                      height: 50,
+                      width: 170,
+                      height: 40,
                       child: Container(
                         // ignore: sort_child_properties_last
                         child: ElevatedButton(
@@ -216,7 +222,7 @@ class _VendorState extends State<Vendor> {
                           style: ElevatedButton.styleFrom(
                             primary: Color(0xff1A214F),
                             shape: RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(10.0)),
+                                borderRadius: new BorderRadius.circular(15.0)),
                           ),
                         ),
                       ),
@@ -225,6 +231,7 @@ class _VendorState extends State<Vendor> {
                 ),
               ],
             ),
+            SizedBox(height: 30,),
           ],
         ),
       ),

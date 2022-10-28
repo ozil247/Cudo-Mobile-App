@@ -1,11 +1,13 @@
-// ignore_for_file: prefer_const_constructors, unused_import, unnecessary_import, must_be_immutable, duplicate_ignore, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, unused_import, unnecessary_import, must_be_immutable, duplicate_ignore, prefer_const_literals_to_create_immutables, non_constant_identifier_names
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/categories.dart';
 import 'package:flutter_application_1/plumbers.dart';
+import 'package:flutter_application_1/select_state.dart';
 import 'package:flutter_application_1/vendors.dart';
 import 'package:flutter_application_1/widget/big_text.dart';
+import 'package:flutter_application_1/widget/bottom_sheet.dart';
 import 'package:flutter_application_1/widget/navbar.dart';
 import 'package:flutter_application_1/widget/small_text.dart';
 import 'package:flutter_application_1/widget/static/colors.dart';
@@ -58,11 +60,12 @@ class _HomeState extends State<Home> {
     return Scaffold(
       drawer: Navbar(),
       appBar: AppBar(
+        iconTheme: IconThemeData(color: AppColors.yellowColor),
         backgroundColor: AppColors.blueColor,
         elevation: 0,
         title: Text(
-          'HOME',
-          style: TextStyle(color: AppColors.blueColor),
+          'DASHBOARD',
+          style: TextStyle(color: AppColors.yellowColor),
         ),
         centerTitle: true,
       ),
@@ -148,63 +151,87 @@ class _HomeState extends State<Home> {
                 ),
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
-                  Column(
-                    children: [
-                      Image(image: AssetImage('assets/plumbing.png')),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Plumbers()));
-                        },
-                        child: SmallText(
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SelectState()));
+                    },
+                    child: Column(
+                      children: [
+                        Image(image: AssetImage('assets/plumbing.png')),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        SmallText(
                             color: AppColors.blueColor,
                             text: 'Plumbing',
                             size: 10,
                             fontWeight: FontWeight.bold),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                  Column(
-                    children: [
-                      Image(image: AssetImage('assets/laundry.png')),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      SmallText(
-                          color: AppColors.blueColor,
-                          text: 'Laundry',
-                          size: 10,
-                          fontWeight: FontWeight.bold),
-                    ],
+                  GestureDetector(
+                    onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => SelectState()
+                                )
+                                );
+                          },
+                    child: Column(
+                      children: [
+                        Image(image: AssetImage('assets/laundry.png')),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        SmallText(
+                            color: AppColors.blueColor,
+                            text: 'Laundry',
+                            size: 10,
+                            fontWeight: FontWeight.bold),
+                      ],
+                    ),
                   ),
-                  Column(
-                    children: [
-                      Image(image: AssetImage('assets/electrician.png')),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      SmallText(
-                          color: AppColors.blueColor,
-                          text: 'Electrician',
-                          size: 10,
-                          fontWeight: FontWeight.bold),
-                    ],
+                  GestureDetector(
+                    onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => SelectState()
+                                )
+                                );
+                          },
+                    child: Column(
+                      children: [
+                        Image(image: AssetImage('assets/electrician.png')),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        SmallText(
+                            color: AppColors.blueColor,
+                            text: 'Electrician',
+                            size: 10,
+                            fontWeight: FontWeight.bold),
+                      ],
+                    ),
                   ),
-                  Column(
-                    children: [
-                      Image(image: AssetImage('assets/barbing.png')),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      SmallText(
-                          color: AppColors.blueColor,
-                          text: 'Barbing',
-                          size: 10,
-                          fontWeight: FontWeight.bold),
-                    ],
+                  GestureDetector(
+                    onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => SelectState()
+                                )
+                                );
+                          },
+                    child: Column(
+                      children: [
+                        Image(image: AssetImage('assets/barbing.png')),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        SmallText(
+                            color: AppColors.blueColor,
+                            text: 'Barbing',
+                            size: 10,
+                            fontWeight: FontWeight.bold),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -216,57 +243,89 @@ class _HomeState extends State<Home> {
                 ),
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
-                  Column(
-                    children: [
-                      Image(image: AssetImage('assets/plumbing.png')),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      SmallText(
-                          color: AppColors.blueColor,
-                          text: 'Plumbing',
-                          size: 10,
-                          fontWeight: FontWeight.bold),
-                    ],
+                  GestureDetector(
+                    onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => SelectState()
+                                )
+                                );
+                          },
+                    child: Column(
+                      children: [
+                        Image(image: AssetImage('assets/plumbing.png')),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        SmallText(
+                            color: AppColors.blueColor,
+                            text: 'Plumbing',
+                            size: 10,
+                            fontWeight: FontWeight.bold),
+                      ],
+                    ),
                   ),
-                  Column(
-                    children: [
-                      Image(image: AssetImage('assets/laundry.png')),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      SmallText(
-                          color: AppColors.blueColor,
-                          text: 'Laundry',
-                          size: 10,
-                          fontWeight: FontWeight.bold),
-                    ],
+                  GestureDetector(
+                    onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => SelectState()
+                                )
+                                );
+                          },
+                    child: Column(
+                      children: [
+                        Image(image: AssetImage('assets/laundry.png')),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        SmallText(
+                            color: AppColors.blueColor,
+                            text: 'Laundry',
+                            size: 10,
+                            fontWeight: FontWeight.bold),
+                      ],
+                    ),
                   ),
-                  Column(
-                    children: [
-                      Image(image: AssetImage('assets/electrician.png')),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      SmallText(
-                          color: AppColors.blueColor,
-                          text: 'Electrician',
-                          size: 10,
-                          fontWeight: FontWeight.bold),
-                    ],
+                  GestureDetector(
+                    onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => SelectState()
+                                )
+                                );
+                          },
+                    child: Column(
+                      children: [
+                        Image(image: AssetImage('assets/electrician.png')),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        SmallText(
+                            color: AppColors.blueColor,
+                            text: 'Electrician',
+                            size: 10,
+                            fontWeight: FontWeight.bold),
+                      ],
+                    ),
                   ),
-                  Column(
-                    children: [
-                      Image(image: AssetImage('assets/barbing.png')),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      SmallText(
-                          color: AppColors.blueColor,
-                          text: 'Barbing',
-                          size: 10,
-                          fontWeight: FontWeight.bold),
-                    ],
+                  GestureDetector(
+                    onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => SelectState()
+                                )
+                                );
+                          },
+                    child: Column(
+                      children: [
+                        Image(image: AssetImage('assets/barbing.png')),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        SmallText(
+                            color: AppColors.blueColor,
+                            text: 'Barbing',
+                            size: 10,
+                            fontWeight: FontWeight.bold),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -283,7 +342,26 @@ Widget imageProfile(context) {
         CircleAvatar(
           radius: 30.0,
           backgroundImage: AssetImage('assets/per.png'),
-        )
+        ),
+        Positioned(
+          bottom: 5.0,
+          right: 3.0,
+          child: InkWell(
+            onTap: () {
+              showBottomSheet(
+                context: context,
+                // ignore: avoid_types_as_parameter_names
+                builder: ((Builder) => bottomsheet()),
+              );
+            },
+            // ignore: prefer_const_constructors
+            child: Icon(
+              Icons.camera_alt,
+              color: AppColors.blueColor,
+              size: 15.0,
+            ),
+          ),
+        ),
       ],
     ),
   );

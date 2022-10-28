@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, avoid_unnecessary_containers, deprecated_member_use, unnecessary_new
+// ignore_for_file: prefer_const_constructors, library_private_types_in_public_api, avoid_unnecessary_containers, deprecated_member_use, unnecessary_new
 
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
@@ -6,15 +6,14 @@ import 'package:flutter/material.dart';
 import '../widget/big_text.dart';
 import '../widget/static/colors.dart';
 
-class ForgotPassword extends StatefulWidget {
-  const ForgotPassword({super.key});
+class ResetPassword extends StatefulWidget {
+  const ResetPassword({ Key? key }) : super(key: key);
 
   @override
-  State<ForgotPassword> createState() => _ForgotPasswordState();
+  _ResetPasswordState createState() => _ResetPasswordState();
 }
 
-class _ForgotPasswordState extends State<ForgotPassword> {
-  
+class _ResetPasswordState extends State<ResetPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +23,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         ),
         backgroundColor: AppColors.blueColor,
         elevation: 0,
-        title: const Text('Forgot Password',
+        title: const Text('Reset Password',
         style: TextStyle(color: Color(0xffFF9E00)),
         ),
         centerTitle: true,
@@ -37,13 +36,14 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               SizedBox(
                 height: 80,
               ),
-              Image(image: AssetImage('assets/fogotp.png')),
+              Image(image: AssetImage('assets/resetp.png')),
               SizedBox(
                 height: 50,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // ignore: sized_box_for_whitespace
                   Container(
                     width: 300,
                     height: 100,
@@ -53,12 +53,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       children: [
                         BigText(
                           color: AppColors.blueColor,
-                          text: 'Forgot Password',
+                          text: 'Reset Password',
                           fontWeight: FontWeight.bold,
                           size: 18,
                         ),
                         Text(
-                          'Enter The Email You Registered With',
+                          'Enter Your New Password',
                           style: TextStyle(
                               fontSize: 14,
                               color: Colors.black,
@@ -75,20 +75,22 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     borderSide: BorderSide(color: AppColors.blueColor),
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  labelText: 'Email',
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      Icons.unsubscribe_outlined,
-                      color: Color(0xff1A214F),
-                    ),
-                    onPressed: () {},
+                  labelText: 'New Password',
+                ),
+              ),
+              SizedBox(height: 20,),
+              TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: AppColors.blueColor),
+                    borderRadius: BorderRadius.circular(10.0),
                   ),
+                  labelText: 'Confirm New Password',
                 ),
               ),
               SizedBox(
                 height: 50,
               ),
-              
               SizedBox(
                 width: 350,
                 height: 50,
@@ -98,8 +100,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     onPressed: () {
                       // ignore: avoid_single_cascade_in_expression_statements
                       Flushbar(
-                              title: "Please,",
-                              message: "Kindly Check Your Email To Reset Your Password!",
+                              title: "Done,",
+                              message: "Your Password has been successfully Reset!",
                               duration: Duration(seconds: 3),
                             )..show(context);
                     },

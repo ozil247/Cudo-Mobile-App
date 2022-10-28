@@ -18,9 +18,15 @@ class _BookingState extends State<Booking> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Booking'),
+        leading: const BackButton(
+          color: Color(0xffFF9E00),
+        ),
+        title: const Text('Booking',
+        style: TextStyle(color: Color(0xffFF9E00)),
+        ),
         backgroundColor: AppColors.blueColor,
         elevation: 0,
+        centerTitle: true,
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -70,17 +76,25 @@ class _BookingState extends State<Booking> {
                 SizedBox(
                   height: 20,
                 ),
-                TextFormField(
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(top: 5, bottom: 200),
-                    border: OutlineInputBorder(),
-                    labelText: 'Message',
-                  ),
+                 Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            BigText(text: 'Type A Mesaage Here', fontWeight: FontWeight.bold,color: AppColors.blueColor,),
+            TextField(
+              minLines: 2,
+              maxLines: 10,
+              keyboardType: TextInputType.multiline,
+              decoration: InputDecoration(
+                hintText: 'Enter a Message',
+                hintStyle: TextStyle(color: AppColors.blueColor),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
-                SizedBox(
-                  height: 10,
-                ),
+              ),
+            )
+          ],
+        ),
                 SizedBox(
                   height: 70,
                 ),
