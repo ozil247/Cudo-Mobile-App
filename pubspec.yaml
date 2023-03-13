@@ -39,6 +39,7 @@ dependencies:
   country_code_picker: ^2.0.2
   url_launcher: ^6.1.5
   provider: ^6.0.0
+  shared_preferences:
   get_it: ^7.2.0
   another_flushbar: ^1.10.28
   get: 4.6.1

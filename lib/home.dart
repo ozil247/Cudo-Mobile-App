@@ -126,7 +126,7 @@ class _HomeState extends State<Home> {
                       size: 16,
                       fontWeight: FontWeight.bold),
                   SizedBox(
-                    width: 220,
+                    width: 200,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -172,11 +172,9 @@ class _HomeState extends State<Home> {
                   ),
                   GestureDetector(
                     onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => SelectState()
-                                )
-                                );
-                          },
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SelectState()));
+                    },
                     child: Column(
                       children: [
                         Image(image: AssetImage('assets/laundry.png')),
@@ -193,11 +191,9 @@ class _HomeState extends State<Home> {
                   ),
                   GestureDetector(
                     onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => SelectState()
-                                )
-                                );
-                          },
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SelectState()));
+                    },
                     child: Column(
                       children: [
                         Image(image: AssetImage('assets/electrician.png')),
@@ -214,11 +210,9 @@ class _HomeState extends State<Home> {
                   ),
                   GestureDetector(
                     onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => SelectState()
-                                )
-                                );
-                          },
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SelectState()));
+                    },
                     child: Column(
                       children: [
                         Image(image: AssetImage('assets/barbing.png')),
@@ -245,11 +239,9 @@ class _HomeState extends State<Home> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => SelectState()
-                                )
-                                );
-                          },
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SelectState()));
+                    },
                     child: Column(
                       children: [
                         Image(image: AssetImage('assets/plumbing.png')),
@@ -266,11 +258,9 @@ class _HomeState extends State<Home> {
                   ),
                   GestureDetector(
                     onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => SelectState()
-                                )
-                                );
-                          },
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SelectState()));
+                    },
                     child: Column(
                       children: [
                         Image(image: AssetImage('assets/laundry.png')),
@@ -287,11 +277,9 @@ class _HomeState extends State<Home> {
                   ),
                   GestureDetector(
                     onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => SelectState()
-                                )
-                                );
-                          },
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SelectState()));
+                    },
                     child: Column(
                       children: [
                         Image(image: AssetImage('assets/electrician.png')),
@@ -308,11 +296,9 @@ class _HomeState extends State<Home> {
                   ),
                   GestureDetector(
                     onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => SelectState()
-                                )
-                                );
-                          },
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SelectState()));
+                    },
                     child: Column(
                       children: [
                         Image(image: AssetImage('assets/barbing.png')),
