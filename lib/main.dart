@@ -5,12 +5,33 @@ import 'package:flutter_application_1/auth/login.dart';
 import 'package:flutter_application_1/auth/reset_password.dart';
 import 'package:flutter_application_1/dashboard.dart';
 import 'package:flutter_application_1/home.dart';
+import 'package:flutter_application_1/onboarding.dart';
 import 'package:flutter_application_1/select_state.dart';
 import 'package:flutter_application_1/splash_screen.dart';
 import 'package:flutter_application_1/plumbers.dart';
+import 'package:flutter_application_1/view_model/auth_vm.dart';
+import 'package:flutter_application_1/view_model/register_vm.dart';
+import 'package:flutter_application_1/view_model/resend_verification_email_vm.dart';
+import 'package:flutter_application_1/widget/getit.dart';
+import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
+
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await setup();
+
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthVm()),
+        ChangeNotifierProvider(create: (_) => RegisterVm()),
+        ChangeNotifierProvider(create: (_) => ResendVerificationEmailVm()),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -19,7 +40,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'CUDO SERVICES',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -50,7 +71,7 @@ class MyApp extends StatelessWidget {
           border: InputBorder.none,
         ),
       ),
-      home: Dashboard(),
+      home: Splash(),
     );
   }
 }

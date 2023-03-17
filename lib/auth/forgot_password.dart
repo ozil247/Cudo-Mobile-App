@@ -25,7 +25,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         backgroundColor: AppColors.blueColor,
         elevation: 0,
         title: const Text('Forgot Password',
-        style: TextStyle(color: Color(0xffFF9E00)),
+        style: TextStyle(color: Color(0xffFF9E00)
+        ),
         ),
         centerTitle: true,
       ),

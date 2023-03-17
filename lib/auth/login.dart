@@ -1,11 +1,15 @@
 // ignore_for_file: deprecated_member_use, avoid_unnecessary_containers, prefer_const_constructors, sized_box_for_whitespace, unnecessary_new, unused_import, prefer_const_constructors_in_immutables, unnecessary_this, must_call_super, non_constant_identifier_names
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/auth/forgot_password.dart';
 import 'package:flutter_application_1/auth/signup.dart';
 import 'package:flutter_application_1/dashboard.dart';
 import 'package:flutter_application_1/home.dart';
+import 'package:flutter_application_1/view_model/auth_vm.dart';
 import 'package:flutter_application_1/widget/static/colors.dart';
+import 'package:provider/provider.dart';
 
 import '../widget/big_text.dart';
 import '../widget/small_text.dart';
@@ -33,7 +37,8 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Consumer<AuthVm>(builder: (context,auth,child){
+      return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -75,6 +80,7 @@ class _LoginState extends State<Login> {
                 ],
               ),
               TextFormField(
+                controller: auth.email,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: BorderSide(color: AppColors.blueColor),
@@ -96,6 +102,7 @@ class _LoginState extends State<Login> {
               TextFormField(
                 keyboardType: TextInputType.text,
                 obscureText:!_passwordVisible, 
+                controller: auth.password,
                 
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -134,10 +141,13 @@ class _LoginState extends State<Login> {
                 child: Container(
                   // ignore: sort_child_properties_last
                   child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => Dashboard()));
+                    onPressed: () => {
+                      auth.login(context)
                     },
+                    // onPressed: () {
+                    //   Navigator.of(context).push(
+                    //       MaterialPageRoute(builder: (context) => Dashboard()));
+                    // },
                     // ignore: sort_child_properties_last
                     child: BigText(
                       text: "Login",
@@ -190,6 +200,8 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
+    });
+    
   }
 
   // for check box
@@ -203,9 +215,10 @@ class _LoginState extends State<Login> {
             value: Value,
             onChanged: (bool? value) {
               setState(() {
-                this.Value = Value;
+                this.Value = !Value;
               });
-            }),
+            }
+            ),
         title: Text(
           'Remember Me',
           style: TextStyle(
