@@ -130,7 +130,7 @@ class _HomeState extends State<Home> {
                       size: 16,
                       fontWeight: FontWeight.bold),
                   SizedBox(
-                    width: 220,
+                    width: 200,
                   ),
                   GestureDetector(
                     onTap: () {

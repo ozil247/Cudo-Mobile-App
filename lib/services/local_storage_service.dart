@@ -27,4 +27,8 @@ class LocalStorageService {
    String? getEmail() {
     return prefs.getString("CudoEmail");
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5

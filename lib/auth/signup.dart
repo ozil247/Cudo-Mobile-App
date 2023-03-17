@@ -41,11 +41,11 @@ class _SignupState extends State<Signup> {
           Row(
             children: [
               SizedBox(
-                width: 180,
+                width: 150,
               ),
               Container(
                 width: 200,
-                height: 100,
+                height: 220,
                 padding: EdgeInsets.only(top: 5, bottom: 5, left: 40, right: 5),
                 child: Image(image: AssetImage('assets/logo.png')),
               ),
@@ -103,7 +103,11 @@ class _SignupState extends State<Signup> {
                     ),
                     child: DropdownButtonHideUnderline(
                         child: DropdownButton<String>(
+<<<<<<< HEAD
                       hint: Text('Type'),
+=======
+                      hint: Text('User Type'),
+>>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5
                       value: auth.type,
                       iconSize: 16,
                       icon: Icon(
@@ -113,7 +117,11 @@ class _SignupState extends State<Signup> {
                       ),
                       isExpanded: true,
                       items: items.map(buildMenuItem).toList(),
+<<<<<<< HEAD
                       onChanged: (value) => setState(() => auth.type = "$value"),
+=======
+                      onChanged: (value) => setState(() => this.value = value),
+>>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5
                     )),
                   ),
                   SizedBox(
@@ -202,7 +210,11 @@ class _SignupState extends State<Signup> {
                     children: [
                       SizedBox(
                         height: 10,
+<<<<<<< HEAD
                         width: 100,
+=======
+                        width: 50,
+>>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5
                       ),
                       Center(
                         child: SizedBox(
@@ -235,7 +247,11 @@ class _SignupState extends State<Signup> {
                 ],
               ),
             );
+<<<<<<< HEAD
           }),
+=======
+          })
+>>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5
         ],
       ),
     ));
