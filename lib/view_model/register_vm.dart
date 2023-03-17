@@ -4,10 +4,7 @@ import 'dart:convert';
 
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:flutter_application_1/auth/verify_email.dart';
-=======
->>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5
 import 'package:flutter_application_1/dashboard.dart';
 import 'package:flutter_application_1/models/register_response.dart';
 import 'package:flutter_application_1/services/local_storage_service.dart';
@@ -24,20 +21,13 @@ class RegisterVm extends ChangeNotifier {
   String type = 'Client';
   final name = TextEditingController();
   final phone = TextEditingController();
-<<<<<<< HEAD
   
-=======
->>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5
 
   Server server = Server();
 
   bool loading = false;
 
-<<<<<<< HEAD
   Future<void> register(BuildContext context)async {
-=======
-  Future<void> register(BuildContext context) async {
->>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5
     loading = true;
     notifyListeners();
 
@@ -54,12 +44,8 @@ class RegisterVm extends ChangeNotifier {
 
     final Map<String, dynamic> parsed = json.decode(response.body);
     print(response.body);
-<<<<<<< HEAD
     if (response.statusCode == 200) {
      
-=======
-    if (response.statusCode == true) {
->>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5
       Flushbar(
         title: "Oops",
         message: parsed['errors'].toString(),
@@ -73,29 +59,17 @@ class RegisterVm extends ChangeNotifier {
     }
 
     final result = RegisterResponse.fromJson(parsed);
-<<<<<<< HEAD
     if (result.statusCode == 200) {
-=======
-    print(result.statusCode);
-    if (result.statusCode == true) {
->>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5
       await getIt.get<LocalStorageService>().setName(result.data?.name);
       await getIt.get<LocalStorageService>().setToken(result.token ?? '');
       await getIt.get<LocalStorageService>().setEmail(email.text);
 
       await Get.offAll(Dashboard());
-<<<<<<< HEAD
       // Get.to(Dashboard());
     } else {
       Flushbar(
         title: "Oops",
         message: "Incorrect credentials",
-=======
-    } else {
-      Flushbar(
-        title: "Oops",
-        message: "Already Used credentials",
->>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5
         duration: Duration(seconds: 3),
       )..show(context);
     }

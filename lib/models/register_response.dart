@@ -43,7 +43,6 @@ class Data {
     this.id,
   });
 
-<<<<<<< HEAD
   Data.fromJson(Map<String, dynamic> json) {
     type = json['type'] as String?;
     name = json['name'] as String?;
@@ -65,24 +64,4 @@ class Data {
     json['id'] = id;
     return json;
   }
-=======
-  Data.fromJson(Map<String, dynamic> json)
-    : type = json['type'] as String?,
-      name = json['name'] as String?,
-      email = json['email'] as String?,
-      phone = json['phone'] as String?,
-      updatedAt = json['updated_at'] as String?,
-      createdAt = json['created_at'] as String?,
-      id = json['id'] as int?;
-
-  Map<String, dynamic> toJson() => {
-    'type' : type,
-    'name' : name,
-    'email' : email,
-    'phone' : phone,
-    'updated_at' : updatedAt,
-    'created_at' : createdAt,
-    'id' : id
-  };
->>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5
 }

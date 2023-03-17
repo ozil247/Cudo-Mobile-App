@@ -8,10 +8,6 @@ import 'package:flutter_application_1/auth/signup.dart';
 import 'package:flutter_application_1/dashboard.dart';
 import 'package:flutter_application_1/home.dart';
 import 'package:flutter_application_1/view_model/auth_vm.dart';
-<<<<<<< HEAD
-=======
-import 'package:flutter_application_1/view_model/register_vm.dart';
->>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5
 import 'package:flutter_application_1/widget/static/colors.dart';
 import 'package:provider/provider.dart';
 
@@ -96,7 +92,6 @@ class _LoginState extends State<Login> {
                           Icons.unsubscribe_outlined,
                           color: Color(0xff1A214F),
                         ),
-<<<<<<< HEAD
                       ],
                     ),
                   ),
@@ -176,10 +171,6 @@ class _LoginState extends State<Login> {
                       text: "Login",
                       color: AppColors.blueColor,
                       fontWeight: FontWeight.normal,
-=======
-                        onPressed: () {},
-                      ),
->>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5
                     ),
                     controller: auth.email,
                   ),

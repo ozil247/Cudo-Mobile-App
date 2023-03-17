@@ -11,19 +11,12 @@ import 'package:flutter_application_1/splash_screen.dart';
 import 'package:flutter_application_1/plumbers.dart';
 import 'package:flutter_application_1/view_model/auth_vm.dart';
 import 'package:flutter_application_1/view_model/register_vm.dart';
-<<<<<<< HEAD
 import 'package:flutter_application_1/view_model/resend_verification_email_vm.dart';
 import 'package:flutter_application_1/widget/getit.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 
-=======
-import 'package:flutter_application_1/widget/getit.dart';
-import 'package:get/route_manager.dart';
-import 'package:provider/provider.dart';
-
->>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -34,10 +27,7 @@ Future main() async {
       providers: [
         ChangeNotifierProvider(create: (_) => AuthVm()),
         ChangeNotifierProvider(create: (_) => RegisterVm()),
-<<<<<<< HEAD
         ChangeNotifierProvider(create: (_) => ResendVerificationEmailVm()),
-=======
->>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5
       ],
       child: MyApp(),
     ),
