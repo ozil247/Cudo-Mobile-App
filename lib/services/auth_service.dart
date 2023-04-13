@@ -11,8 +11,4 @@ class AuthService {
         await server.authData({'email': email, 'password': password}, 'login');
     print(response);
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> e6d2e60b728af7baa3eabb11f4fdeafdefc9d0b5

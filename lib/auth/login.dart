@@ -1,17 +1,15 @@
-// ignore_for_file: deprecated_member_use, avoid_unnecessary_containers, prefer_const_constructors, sized_box_for_whitespace, unnecessary_new, unused_import, prefer_const_constructors_in_immutables, unnecessary_this, must_call_super, non_constant_identifier_names
 
-import 'dart:async';
+
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/auth/forgot_password.dart';
 import 'package:flutter_application_1/auth/signup.dart';
-import 'package:flutter_application_1/dashboard.dart';
-import 'package:flutter_application_1/home.dart';
 import 'package:flutter_application_1/view_model/auth_vm.dart';
+import 'package:flutter_application_1/widget/big_text.dart';
 import 'package:flutter_application_1/widget/static/colors.dart';
 import 'package:provider/provider.dart';
 
-import '../widget/big_text.dart';
 import '../widget/small_text.dart';
 
 class Login extends StatefulWidget {
@@ -37,8 +35,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<AuthVm>(builder: (context,auth,child){
-      return Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
             padding: const EdgeInsets.all(15.0),
@@ -92,85 +89,8 @@ class _LoginState extends State<Login> {
                           Icons.unsubscribe_outlined,
                           color: Color(0xff1A214F),
                         ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              TextFormField(
-                controller: auth.email,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.blueColor),
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  labelText: 'Email',
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      Icons.unsubscribe_outlined,
-                      color: Color(0xff1A214F),
+                        onPressed: () {},
                       ),
-                      onPressed: () {},
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                obscureText:!_passwordVisible, 
-                controller: auth.password,
-                
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.blueColor),
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  labelText: 'Password',
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      _passwordVisible
-                      ? Icons.visibility
-                      : Icons.visibility_off,
-                      color: Color(0xff1A214F),
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          _passwordVisible = !_passwordVisible;
-                        });
-                      },
-                  ),
-                ),
-              ),
-              // Testing a CheckBox start here
-              
-              // tetsting a check box ending here
-              SizedBox(
-                height: 10,
-              ),
-              buildCheckbox(),
-              SizedBox(
-                height: 40,
-              ),
-              SizedBox(
-                width: 350,
-                height: 50,
-                child: Container(
-                  // ignore: sort_child_properties_last
-                  child: ElevatedButton(
-                    onPressed: () => {
-                      auth.login(context)
-                    },
-                    // onPressed: () {
-                    //   Navigator.of(context).push(
-                    //       MaterialPageRoute(builder: (context) => Dashboard()));
-                    // },
-                    // ignore: sort_child_properties_last
-                    child: BigText(
-                      text: "Login",
-                      color: AppColors.blueColor,
-                      fontWeight: FontWeight.normal,
                     ),
                     controller: auth.email,
                   ),
@@ -273,8 +193,6 @@ class _LoginState extends State<Login> {
             })),
       ),
     );
-    });
-    
   }
 
   // for check box
@@ -290,8 +208,7 @@ class _LoginState extends State<Login> {
               setState(() {
                 this.Value = !Value;
               });
-            }
-            ),
+            }),
         title: Text(
           'Remember Me',
           style: TextStyle(

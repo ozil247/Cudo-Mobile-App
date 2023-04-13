@@ -1,17 +1,22 @@
-// ignore_for_file: prefer_const_constructors, unused_import, unnecessary_import, must_be_immutable, duplicate_ignore, prefer_const_literals_to_create_immutables, non_constant_identifier_names
+// ignore_for_file: prefer_const_constructors, unused_import, unnecessary_import, must_be_immutable, duplicate_ignore, prefer_const_literals_to_create_immutables, non_constant_identifier_names, duplicate_import
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/categories.dart';
+import 'package:flutter_application_1/models/profile_response.dart';
 import 'package:flutter_application_1/plumbers.dart';
 import 'package:flutter_application_1/select_state.dart';
 import 'package:flutter_application_1/vendors.dart';
+import 'package:flutter_application_1/view_model/profile_vm.dart';
 import 'package:flutter_application_1/widget/big_text.dart';
 import 'package:flutter_application_1/widget/bottom_sheet.dart';
 import 'package:flutter_application_1/widget/navbar.dart';
 import 'package:flutter_application_1/widget/small_text.dart';
 import 'package:flutter_application_1/widget/static/colors.dart';
 import 'package:flutter_html/shims/dart_ui_real.dart';
+import 'package:provider/provider.dart';
+
+import 'models/profile_response.dart';
 
 class Home extends StatefulWidget {
   List<Map<String, dynamic>> category = [
@@ -91,11 +96,28 @@ class _HomeState extends State<Home> {
                   SizedBox(
                     width: 20,
                   ),
-                  BigText(
-                      color: AppColors.yellowColor,
-                      text: 'Helllo, MIRACLE',
-                      size: 14,
-                      fontWeight: FontWeight.bold)
+                  FutureBuilder(
+                     future: Provider.of<ProfileVm>(context, listen: false)
+                            .getProfile(context),
+                        builder: (context, AsyncSnapshot snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
+                            return Center(
+                              child: CircularProgressIndicator.adaptive(),
+                            );
+                          } else if (snapshot.hasError) {
+                            return Center(
+                              child: Text('An error occured'),
+                            );
+                          }
+                          ProfileResponse prof = snapshot.data;
+                          return  BigText(
+                        color: AppColors.yellowColor,
+                        text: 'Helllo,${prof.data?.name}',
+                        size: 14,
+                        fontWeight: FontWeight.bold);
+                        }
+                  ),
                 ],
               ),
               SizedBox(

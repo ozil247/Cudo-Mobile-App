@@ -2,9 +2,12 @@
 
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/profile_response.dart';
+import 'package:flutter_application_1/view_model/profile_vm.dart';
 import 'package:flutter_application_1/widget/big_text.dart';
 import 'package:flutter_application_1/widget/bottom_sheet.dart';
 import 'package:flutter_application_1/widget/static/colors.dart';
+import 'package:provider/provider.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -69,8 +72,7 @@ class _ProfileState extends State<Profile> {
                             image: DecorationImage(
                                 image: AssetImage('assets/logo.png'),
                                 fit: BoxFit.cover),
-                            color: Colors.white
-                            ),
+                            color: Colors.white),
                         child: Column(
                           children: [
                             SizedBox(
@@ -78,7 +80,9 @@ class _ProfileState extends State<Profile> {
                             ),
                             Row(
                               children: [
-                                SizedBox(width: 280,),
+                                SizedBox(
+                                  width: 280,
+                                ),
                                 InkWell(
                                   onTap: () {
                                     showBottomSheet(
@@ -134,19 +138,34 @@ class _ProfileState extends State<Profile> {
             SizedBox(
               height: 10,
             ),
-            Material(
-              color: AppColors.blueColor,
-              child: ListTile(
-                title: BigText(
-                  text: "Name: Miracle Adah",
-                  // text: "${prof.userFullname}",
-                  fontWeight: FontWeight.bold,
-                  // profileResponse.firstname
-                  size: 14,
-                  color: AppColors.yellowColor,
-                ),
-              ),
-            ),
+            FutureBuilder(
+                future: Provider.of<ProfileVm>(context, listen: false)
+                    .getProfile(context),
+                builder: (context, AsyncSnapshot snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Center(
+                      child: CircularProgressIndicator.adaptive(),
+                    );
+                  } else if (snapshot.hasError) {
+                    return Center(
+                      child: Text('An error occured'),
+                    );
+                  }
+                  ProfileResponse prof = snapshot.data;
+                  return Material(
+                    color: AppColors.blueColor,
+                    child: ListTile(
+                      title: BigText(
+                        text: "Name: ${prof.data?.name}",
+                        // text: "${prof.userFullname}",
+                        fontWeight: FontWeight.bold,
+                        // profileResponse.firstname
+                        size: 14,
+                        color: AppColors.yellowColor,
+                      ),
+                    ),
+                  );
+                }),
             Divider(
               color: AppColors.yellowColor,
               indent: 10,
@@ -155,18 +174,34 @@ class _ProfileState extends State<Profile> {
             SizedBox(
               height: 10,
             ),
-            Material(
-              color: AppColors.blueColor,
-              child: ListTile(
-                title: BigText(
-                  text: "Email: MiracleMoneyMaker@gmail.com",
-                  // text: "${prof.userEmail}",
-                  fontWeight: FontWeight.bold,
-                  size: 14,
-                  color: AppColors.yellowColor,
-                ),
-              ),
-            ),
+            FutureBuilder(
+                future: Provider.of<ProfileVm>(context, listen: false)
+                    .getProfile(context),
+                builder: (context, AsyncSnapshot snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Center(
+                      child: CircularProgressIndicator.adaptive(),
+                    );
+                  } else if (snapshot.hasError) {
+                    return Center(
+                      child: Text('An error occured'),
+                    );
+                  }
+                  ProfileResponse prof = snapshot.data;
+                  return Material(
+                    color: AppColors.blueColor,
+                    child: ListTile(
+                      title: BigText(
+                        text: "Email: ${prof.data?.email}",
+                        // text: "${prof.userFullname}",
+                        fontWeight: FontWeight.bold,
+                        // profileResponse.firstname
+                        size: 14,
+                        color: AppColors.yellowColor,
+                      ),
+                    ),
+                  );
+                }),
             Divider(
               color: AppColors.yellowColor,
               indent: 10,
@@ -175,22 +210,81 @@ class _ProfileState extends State<Profile> {
             SizedBox(
               height: 20,
             ),
-            TextFormField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15)),
-                  labelText: 'Phone'),
+            BigText(
+              text: 'Phone Number',
+              fontWeight: FontWeight.bold,
+              size: 16,
+              color: AppColors.blueColor,
             ),
-            // TextFormField(
-            //   // controller:
-            //   //     Provider.of<ProfileVm>(context, listen: true).phone,
-            //   decoration: InputDecoration(
-            //     prefixIcon: Icon(Icons.phone),
-            //     border: OutlineInputBorder(),
-            //     labelText: 'Phone',
-            //   ),
-            // ),
-            SizedBox(height: 20),
+            Consumer<ProfileVm>(builder: (context, auth, child) {
+              return FutureBuilder(
+                  future: Provider.of<ProfileVm>(context, listen: false)
+                      .getProfile(context),
+                  builder: (context, AsyncSnapshot snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return Center(
+                        child: CircularProgressIndicator.adaptive(),
+                      );
+                    } else if (snapshot.hasError) {
+                      return Center(
+                        child: Text('An error occured'),
+                      );
+                    }
+                    ProfileResponse prof = snapshot.data;
+                    return Column(
+                      children: [
+                        TextFormField(
+                          controller: auth.phone,
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15)),
+                              hintText: '${prof.data?.phone}'),
+                        ),
+                        SizedBox(height: 20),
+                        Container(
+              margin: EdgeInsets.only(top: 20, left: 10, right: 20),
+              child: SizedBox(
+                width: 350,
+                height: 50,
+                // ignore: sort_child_properties_last
+                child: ElevatedButton(
+                  onPressed: ()=> {
+                    auth.updateProfile(context),
+                    Flushbar(
+                      title: "Your Profile",
+                      message: "Has Been Updated Successfully!",
+                      duration: Duration(seconds: 3),
+                    )..show(context),
+                  },
+
+                  // ignore: sort_child_properties_last
+                  child: BigText(
+                    text: "UPDATE",
+                    fontWeight: FontWeight.bold,
+                    size: 14,
+                    color: AppColors.yellowColor,
+                  ),
+
+                  style: ElevatedButton.styleFrom(
+                    primary:
+                        AppColors.blueColor, //change background color of button
+                    // onPrimary: Colors.yellow, //change text color of button
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(color: AppColors.yellowColor),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+                      ],
+                    );
+                    
+                  }
+                  );
+                  
+            }),
+            
             Container(
               margin: EdgeInsets.only(top: 20, left: 10, right: 20),
               child: SizedBox(
@@ -200,12 +294,12 @@ class _ProfileState extends State<Profile> {
                 child: ElevatedButton(
                   onPressed: () {
                     Flushbar(
-                              title: "Your Profile",
-                              message: "Has Been Updated Successfully!",
-                              duration: Duration(seconds: 3),
-                            )..show(context);
-                    },
-                  
+                      title: "Your Profile",
+                      message: "Has Been Updated Successfully!",
+                      duration: Duration(seconds: 3),
+                    )..show(context);
+                  },
+
                   // ignore: sort_child_properties_last
                   child: BigText(
                     text: "UPDATE",

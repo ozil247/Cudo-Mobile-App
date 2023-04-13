@@ -10,6 +10,7 @@ import 'package:flutter_application_1/select_state.dart';
 import 'package:flutter_application_1/splash_screen.dart';
 import 'package:flutter_application_1/plumbers.dart';
 import 'package:flutter_application_1/view_model/auth_vm.dart';
+import 'package:flutter_application_1/view_model/profile_vm.dart';
 import 'package:flutter_application_1/view_model/register_vm.dart';
 import 'package:flutter_application_1/view_model/resend_verification_email_vm.dart';
 import 'package:flutter_application_1/widget/getit.dart';
@@ -27,6 +28,7 @@ Future main() async {
       providers: [
         ChangeNotifierProvider(create: (_) => AuthVm()),
         ChangeNotifierProvider(create: (_) => RegisterVm()),
+         ChangeNotifierProvider(create: (_) => ProfileVm()),
         ChangeNotifierProvider(create: (_) => ResendVerificationEmailVm()),
       ],
       child: MyApp(),
@@ -71,6 +73,7 @@ class MyApp extends StatelessWidget {
           border: InputBorder.none,
         ),
       ),
+      // home: Splash(),
       home: Splash(),
     );
   }

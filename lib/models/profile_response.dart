@@ -1,25 +1,23 @@
-class LoginResponse {
-  int? statusCode;
+class ProfileResponse {
+  bool? statusCode;
   Data? data;
-  String? token;
+  
 
-  LoginResponse({
+  ProfileResponse({
     this.statusCode,
     this.data,
-    this.token,
+    
   });
 
-  LoginResponse.fromJson(Map<String, dynamic> json) {
-    statusCode = json['status_code'] as int?;
+  ProfileResponse.fromJson(Map<String, dynamic> json) {
+    statusCode = json['status_code'] as bool?;
     data = (json['data'] as Map<String,dynamic>?) != null ? Data.fromJson(json['data'] as Map<String,dynamic>) : null;
-    token = json['token'] as String?;
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> json = <String, dynamic>{};
     json['status_code'] = statusCode;
     json['data'] = data?.toJson();
-    json['token'] = token;
     return json;
   }
 }
