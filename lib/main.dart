@@ -81,7 +81,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       // home: Plumbers(),
-      home: CustomTabbar(),
+      home: Splash(),
     );
   }
 }
