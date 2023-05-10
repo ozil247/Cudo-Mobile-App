@@ -1,6 +1,6 @@
 
 
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables, non_constant_identifier_names, must_call_super, sized_box_for_whitespace, avoid_unnecessary_containers, deprecated_member_use, unnecessary_new, unnecessary_this
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/auth/forgot_password.dart';

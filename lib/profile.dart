@@ -242,49 +242,46 @@ class _ProfileState extends State<Profile> {
                         ),
                         SizedBox(height: 20),
                         Container(
-              margin: EdgeInsets.only(top: 20, left: 10, right: 20),
-              child: SizedBox(
-                width: 350,
-                height: 50,
-                // ignore: sort_child_properties_last
-                child: ElevatedButton(
-                  onPressed: ()=> {
-                    auth.updateProfile(context),
-                    Flushbar(
-                      title: "Your Profile",
-                      message: "Has Been Updated Successfully!",
-                      duration: Duration(seconds: 3),
-                    )..show(context),
-                  },
+                          margin: EdgeInsets.only(top: 20, left: 10, right: 20),
+                          child: SizedBox(
+                            width: 350,
+                            height: 50,
+                            // ignore: sort_child_properties_last
+                            child: ElevatedButton(
+                              onPressed: () => {
+                                auth.updateProfile(context),
+                                Flushbar(
+                                  title: "Your Profile",
+                                  message: "Has Been Updated Successfully!",
+                                  duration: Duration(seconds: 3),
+                                )..show(context),
+                              },
 
-                  // ignore: sort_child_properties_last
-                  child: BigText(
-                    text: "UPDATE",
-                    fontWeight: FontWeight.bold,
-                    size: 14,
-                    color: AppColors.yellowColor,
-                  ),
+                              // ignore: sort_child_properties_last
+                              child: BigText(
+                                text: "UPDATE",
+                                fontWeight: FontWeight.bold,
+                                size: 14,
+                                color: AppColors.yellowColor,
+                              ),
 
-                  style: ElevatedButton.styleFrom(
-                    primary:
-                        AppColors.blueColor, //change background color of button
-                    // onPrimary: Colors.yellow, //change text color of button
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      side: BorderSide(color: AppColors.yellowColor),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+                              style: ElevatedButton.styleFrom(
+                                primary: AppColors
+                                    .blueColor, //change background color of button
+                                // onPrimary: Colors.yellow, //change text color of button
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  side:
+                                      BorderSide(color: AppColors.yellowColor),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     );
-                    
-                  }
-                  );
-                  
+                  });
             }),
-            
             Container(
               margin: EdgeInsets.only(top: 20, left: 10, right: 20),
               child: SizedBox(

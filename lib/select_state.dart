@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/plumbers.dart';
+import 'package:flutter_application_1/vendors.dart';
 import 'package:flutter_application_1/widget/big_text.dart';
 import 'package:flutter_application_1/widget/small_text.dart';
 import 'package:flutter_application_1/widget/static/colors.dart';
@@ -115,7 +116,7 @@ class _SelectStateState extends State<SelectState> {
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => Plumbers()));
+                          MaterialPageRoute(builder: (context) => Vendors()));
                     },
                     // ignore: sort_child_properties_last
                     child: BigText(

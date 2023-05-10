@@ -19,7 +19,7 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   List pages = [
     Home(),
-    Vendor(),
+    Vendors(),
     Notifications(),
     Profile(),
   ];

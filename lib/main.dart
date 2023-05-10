@@ -3,16 +3,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/auth/login.dart';
 import 'package:flutter_application_1/auth/reset_password.dart';
+import 'package:flutter_application_1/custom_bar.dart';
 import 'package:flutter_application_1/dashboard.dart';
 import 'package:flutter_application_1/home.dart';
+import 'package:flutter_application_1/notifications.dart';
 import 'package:flutter_application_1/onboarding.dart';
 import 'package:flutter_application_1/select_state.dart';
 import 'package:flutter_application_1/splash_screen.dart';
 import 'package:flutter_application_1/plumbers.dart';
+import 'package:flutter_application_1/vendors.dart';
 import 'package:flutter_application_1/view_model/auth_vm.dart';
+import 'package:flutter_application_1/view_model/booking_vm.dart';
 import 'package:flutter_application_1/view_model/profile_vm.dart';
 import 'package:flutter_application_1/view_model/register_vm.dart';
 import 'package:flutter_application_1/view_model/resend_verification_email_vm.dart';
+import 'package:flutter_application_1/view_model/vendor_vm.dart';
 import 'package:flutter_application_1/widget/getit.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
@@ -29,6 +34,8 @@ Future main() async {
         ChangeNotifierProvider(create: (_) => AuthVm()),
         ChangeNotifierProvider(create: (_) => RegisterVm()),
          ChangeNotifierProvider(create: (_) => ProfileVm()),
+         ChangeNotifierProvider(create: (_) => VendorVm()),
+         ChangeNotifierProvider(create: (_) => BookingVm()),
         ChangeNotifierProvider(create: (_) => ResendVerificationEmailVm()),
       ],
       child: MyApp(),
@@ -73,8 +80,8 @@ class MyApp extends StatelessWidget {
           border: InputBorder.none,
         ),
       ),
-      // home: Splash(),
-      home: Splash(),
+      // home: Plumbers(),
+      home: CustomTabbar(),
     );
   }
 }

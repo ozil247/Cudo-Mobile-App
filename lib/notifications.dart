@@ -73,7 +73,7 @@ class _NotificationsState extends State<Notifications> {
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   decoration: BoxDecoration(
-                    color: AppColors.blueColor,
+                    color: Colors.white,
                     boxShadow: [
                       BoxShadow(
                           color: AppColors.blueColor,
@@ -85,23 +85,24 @@ class _NotificationsState extends State<Notifications> {
                   ),
                   child: Material(
                     child: ListTile(
-                      tileColor: AppColors.blueColor,
+                      tileColor: Colors.white,
                       leading: Icon(
                         Icons.email,
-                        color: AppColors.yellowColor,
+                        color: AppColors.blueColor,
                         size: 30,
                       ),
                       title: BigText(
                           text: "New Features On This App",
+                          color: AppColors.blueColor,
                           fontWeight: FontWeight.bold),
                       subtitle: SmallText(
                         text: "Starts From The Day You Request For A Service",
                         fontWeight: FontWeight.bold,
-                        color: AppColors.yellowColor,
+                        color: AppColors.blueColor,
                       ),
                       trailing: Icon(
                         Icons.arrow_forward_ios,
-                        color: AppColors.yellowColor,
+                        color: AppColors.blueColor,
                         size: 30,
                       ),
                     ),
@@ -126,7 +127,7 @@ class _NotificationsState extends State<Notifications> {
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   decoration: BoxDecoration(
-                    color: AppColors.blueColor,
+                    color: Colors.white,
                     boxShadow: [
                       BoxShadow(
                           color: AppColors.blueColor,
@@ -138,23 +139,24 @@ class _NotificationsState extends State<Notifications> {
                   ),
                   child: Material(
                     child: ListTile(
-                      tileColor: AppColors.blueColor,
+                      tileColor: Colors.white,
                       leading: Icon(
                         Icons.email,
-                        color: AppColors.yellowColor,
+                        color: AppColors.blueColor,
                         size: 30,
                       ),
                       title: BigText(
                           text: "New Features On This App",
+                          color: AppColors.blueColor,
                           fontWeight: FontWeight.bold),
                       subtitle: SmallText(
                         text: "Starts From The Day You Request For A Service",
                         fontWeight: FontWeight.bold,
-                        color: AppColors.yellowColor,
+                        color: AppColors.blueColor,
                       ),
                       trailing: Icon(
                         Icons.arrow_forward_ios,
-                        color: AppColors.yellowColor,
+                        color: AppColors.blueColor,
                         size: 30,
                       ),
                     ),
@@ -179,7 +181,7 @@ class _NotificationsState extends State<Notifications> {
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   decoration: BoxDecoration(
-                    color: AppColors.blueColor,
+                    color: Colors.white,
                     boxShadow: [
                       BoxShadow(
                           color: AppColors.blueColor,
@@ -191,129 +193,24 @@ class _NotificationsState extends State<Notifications> {
                   ),
                   child: Material(
                     child: ListTile(
-                      tileColor: AppColors.blueColor,
+                      tileColor: Colors.white,
                       leading: Icon(
                         Icons.email,
-                        color: AppColors.yellowColor,
+                        color: AppColors.blueColor,
                         size: 30,
                       ),
                       title: BigText(
                           text: "New Features On This App",
-                          fontWeight: FontWeight.bold),
-                      subtitle: SmallText(
-                        text: "Starts From The Day You Request For A Service",
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.yellowColor,
-                      ),
-                      trailing: Icon(
-                        Icons.arrow_forward_ios,
-                        color: AppColors.yellowColor,
-                        size: 30,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Divider(
-                height: 10,
-                endIndent: 100,
-                indent: 100,
-                thickness: 2,
-                color: Color(0xffFF9E00),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                  decoration: BoxDecoration(
-                    color: AppColors.blueColor,
-                    boxShadow: [
-                      BoxShadow(
                           color: AppColors.blueColor,
-                          blurRadius: 10,
-                          offset: Offset(0, 4))
-                    ],
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.black.withOpacity(0.13)),
-                  ),
-                  child: Material(
-                    child: ListTile(
-                      tileColor: AppColors.blueColor,
-                      leading: Icon(
-                        Icons.email,
-                        color: AppColors.yellowColor,
-                        size: 30,
-                      ),
-                      title: BigText(
-                          text: "New Features On This App",
                           fontWeight: FontWeight.bold),
                       subtitle: SmallText(
                         text: "Starts From The Day You Request For A Service",
                         fontWeight: FontWeight.bold,
-                        color: AppColors.yellowColor,
+                        color: AppColors.blueColor,
                       ),
                       trailing: Icon(
                         Icons.arrow_forward_ios,
-                        color: AppColors.yellowColor,
-                        size: 30,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Divider(
-                height: 10,
-                endIndent: 100,
-                indent: 100,
-                thickness: 2,
-                color: Color(0xffFF9E00),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                  decoration: BoxDecoration(
-                    color: AppColors.blueColor,
-                    boxShadow: [
-                      BoxShadow(
-                          color: AppColors.blueColor,
-                          blurRadius: 10,
-                          offset: Offset(0, 4))
-                    ],
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.black.withOpacity(0.13)),
-                  ),
-                  child: Material(
-                    child: ListTile(
-                      tileColor: AppColors.blueColor,
-                      leading: Icon(
-                        Icons.email,
-                        color: AppColors.yellowColor,
-                        size: 30,
-                      ),
-                      title: BigText(
-                          text: "New Features On This App",
-                          fontWeight: FontWeight.bold),
-                      subtitle: SmallText(
-                        text: "Starts From The Day You Request For A Service",
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.yellowColor,
-                      ),
-                      trailing: Icon(
-                        Icons.arrow_forward_ios,
-                        color: AppColors.yellowColor,
+                        color: AppColors.blueColor,
                         size: 30,
                       ),
                     ),
